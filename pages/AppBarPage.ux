@@ -9,7 +9,7 @@
   </JavaScript>
   <Router ux:Dependency="router" />
   <DockPanel>
-    <FN.AppBar Title="App Bar" Dock="Top" BarColor="#e0e0e0" TextColor="Black" Extended="True">
+    <FN.AppBar Title="App Bar" Dock="Top" BarColor="#F8F8F8" TextColor="Black" Extended="True">
       <FN.AppBarItem ux:Template="LeftItem">
         <FN.Icon Color="Black" Clicked="{goBack}" Visibility="Visible">&#xE317;</FN.Icon>
       </FN.AppBarItem>

@@ -4,7 +4,7 @@
   <float4 ux:Property="BarColor" />
   <bool ux:Property="Extended" />
   <StatusBarBackground Dock="Top" />
-  <Fuse.iOS.StatusBarConfig Style="Light" />
+  <Fuse.iOS.StatusBarConfig Style="Dark" />
   <StackPanel>
     <Panel Height="56" Padding="16">
       <StackPanel Alignment="Left">
@@ -17,15 +17,18 @@
       </WhileTrue>
       <WhileTrue Value="AppStyle == 'Cupertino'">
         <Change appBarTitle.Alignment='Center' />
+        <Change appBarTitle.Font='SanFranciscoTextRegular' />
+        <Change this.Height='44' />
       </WhileTrue>
       <StackPanel Margin="0, 0, 32, 0">
         <Each TemplateSource="this" TemplateKey="RightItem" Count="1" />
       </StackPanel>
     </Panel>
     <WhileTrue Value="ReadProperty Extended">
-      <Panel Height="56" Padding="16">
-        <Text Value="{ReadProperty Title}" Font="RobotoMedium" FontSize="24" TextColor="{ReadProperty TextColor}" />
+      <Panel Height="56" Padding="16,0">
+        <Text Value="{ReadProperty Title}" Font="SanFranciscoDisplayBold" FontSize="41" TextColor="{ReadProperty TextColor}" />
       </Panel>
+      <Rectangle Height="1" Color="#dddddd" />
     </WhileTrue>
   </StackPanel>
 </DockPanel>
