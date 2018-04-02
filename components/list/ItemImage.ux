@@ -1,0 +1,3 @@
+<Image ux:Class="FN.ItemImage" Height="40" Width="40" Margin="0, 0, 16, 0">
+  <Circle Color="#bdbdbd" Height="40" Width="40" Layer="Background" />
+</Image>

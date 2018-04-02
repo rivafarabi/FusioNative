@@ -1,0 +1,4 @@
+<Container ux:Class="FN.ListItem" Subtree="itemContent" Padding="16, 0">
+  <StackPanel ux:Binding="Children" Orientation="Horizontal" ux:Name="itemContent">
+  </StackPanel>
+</Container>

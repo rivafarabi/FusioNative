@@ -1,0 +1,47 @@
+<App>
+	<Font File="assets/fonts/Roboto-Black.ttf" ux:Global="RobotoBlack" />
+	<Font File="assets/fonts/Roboto-BlackItalic.ttf" ux:Global="RobotoBlackItalic" />
+	<Font File="assets/fonts/Roboto-Bold.ttf" ux:Global="RobotoBold" />
+	<Font File="assets/fonts/Roboto-BoldItalic.ttf" ux:Global="RobotoBoldItalic" />
+	<Font File="assets/fonts/Roboto-Italic.ttf" ux:Global="RobotoItalic" />
+	<Font File="assets/fonts/Roboto-Light.ttf" ux:Global="RobotoLight" />
+	<Font File="assets/fonts/Roboto-LightItalic.ttf" ux:Global="RobotoLightItalic" />
+	<Font File="assets/fonts/Roboto-Medium.ttf" ux:Global="RobotoMedium" />
+	<Font File="assets/fonts/Roboto-MediumItalic.ttf" ux:Global="RobotoMediumItalic" />
+	<Font File="assets/fonts/Roboto-Regular.ttf" ux:Global="RobotoRegular" />
+	<Font File="assets/fonts/Roboto-Thin.ttf" ux:Global="RobotoThin" />
+	<Font File="assets/fonts/Roboto-ThinItalic.ttf" ux:Global="RobotoThinItalic" />
+	<Font File="assets/icons/MaterialIcons-Regular.ttf" ux:Global="MaterialIcons" />
+	<string ux:Global="AppTheme" ux:Value="Light" />
+	<string ux:Global="AppStyle" ux:Value="Material" />
+	<Router ux:Name="router" />
+
+	<DockPanel>
+		<FN.AppBar ux:Name="appBar" Title="Typography" Dock="Top" BarColor="#e74c3c" TextColor="White">
+			<FN.AppBarItem ux:Template="LeftItem">
+				<FN.Icon Color="White">&#xE5D2;</FN.Icon>
+			</FN.AppBarItem>
+		</FN.AppBar>
+		<ClientPanel>
+			<Navigator DefaultPath="typography">
+				<TypographyPage ux:Template="typography">
+					<WhilePageActive>
+						<Set appBar.Title="Typography" />
+					</WhilePageActive>
+				</TypographyPage>
+				<ListPage ux:Template="list">
+					<WhilePageActive>
+						<Set appBar.Title="List" />
+					</WhilePageActive>
+				</ListPage>
+			</Navigator>
+		</ClientPanel>
+		<StackPanel Orientation="Horizontal" ContentAlignment="Center" Padding="16" Background="#e0e0e0" Dock="Bottom" Height="48">
+			<FN.TextCaption>Android</FN.TextCaption>
+			<NativeViewHost>
+				<Switch />
+			</NativeViewHost>
+			<FN.TextCaption>iOS</FN.TextCaption>
+		</StackPanel>
+	</DockPanel>
+</App>

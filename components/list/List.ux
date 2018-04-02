@@ -1,0 +1,11 @@
+<Container ux:Class="FN.List" Subtree="itemContent" Title="">
+  <string ux:Property="Title" />
+  <WhileFalse Value="{(Property Title) == ''}">
+    <FN.TextMenu Color="#009689" Margin="16, 16, 0, 0">{Property Title}</FN.TextMenu>
+  </WhileFalse>
+  <DockPanel  ux:Binding="Children">
+    <StackPanel Orientation="Vertical" ux:Name="itemContent" ItemSpacing="16">
+    </StackPanel>
+    <Rectangle Dock="Bottom" Color="#dddddd" Height="1" Margin="0, 16, 0, 0"/>
+  </DockPanel>
+</Container>

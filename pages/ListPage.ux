@@ -1,0 +1,33 @@
+<Page ux:Class="ListPage">
+  <DockPanel>
+    <ScrollView>
+      <StackPanel>
+        <FN.List Title="Single Line Item">
+          <Each Count="3">
+            <FN.ListItem>
+              <FN.ItemLabel>Single Line Item</FN.ItemLabel>
+            </FN.ListItem>
+          </Each>
+        </FN.List>
+        <FN.List Title="Single Line Item with Avatar">
+          <Each Count="3">
+            <FN.ListItem>
+              <FN.ItemImage />
+              <FN.ItemLabel>Single Line Item</FN.ItemLabel>
+            </FN.ListItem>
+          </Each>
+        </FN.List>
+        <FN.List Title="Two Line Item">
+          <Each Count="3">
+            <FN.ListItem>
+              <StackPanel>
+                <FN.ItemLabel>Two Line Item</FN.ItemLabel>
+                <FN.ItemCaption>Secondary Item</FN.ItemCaption>
+              </StackPanel>
+            </FN.ListItem>
+          </Each>
+        </FN.List>
+      </StackPanel>
+    </ScrollView>
+  </DockPanel>
+</Page>

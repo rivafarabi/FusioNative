@@ -1,0 +1,11 @@
+build/Local/Designer/cache/ux13/MainView.g.uno
+build/Local/Designer/cache/ux13/PageWithTitle.g.uno
+build/Local/Designer/cache/ux13/FN.AppBar.g.uno
+build/Local/Designer/cache/ux13/FN.Text.g.uno
+build/Local/Designer/cache/ux13/FN.Headline.g.uno
+build/Local/Designer/cache/ux13/FN.Subheader.g.uno
+build/Local/Designer/cache/ux13/FN.TextBody.g.uno
+build/Local/Designer/cache/ux13/FN.TextCaption.g.uno
+build/Local/Designer/cache/ux13/FN.TextMenu.g.uno
+build/Local/Designer/cache/ux13/FN.Title.g.uno
+build/Local/Designer/cache/ux13/FusioNative.unoproj.g.uno
