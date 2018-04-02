@@ -1,25 +1,31 @@
-<StackPanel ux:Class="FN.AppBar" Color="{Property BarColor}" Dock="Top" Title="" TextColor="Black" BarColor="White" 
-  >
+<DockPanel ux:Class="FN.AppBar" Color="{Property BarColor}" Dock="Top" Title="" TextColor="Black" BarColor="White" Extended="False">
   <string ux:Property="Title" />
   <float4 ux:Property="TextColor" />
   <float4 ux:Property="BarColor" />
-
-  <StatusBarBackground Dock="Top" /> 
-  <Panel Height="56" Padding="16">
-  <StackPanel Alignment="Left">
-    <Each TemplateSource="this" TemplateKey="LeftItem" Count="1" />
+  <bool ux:Property="Extended" />
+  <StatusBarBackground Dock="Top" />
+  <Fuse.iOS.StatusBarConfig Style="Light" />
+  <StackPanel>
+    <Panel Height="56" Padding="16">
+      <StackPanel Alignment="Left">
+        <Each TemplateSource="this" TemplateKey="LeftItem" Count="1" />
+      </StackPanel>
+      <Text ux:Name="appBarTitle" Value="{ReadProperty Title}" Font="RobotoMedium" FontSize="20" TextColor="{ReadProperty TextColor}" />
+      <WhileTrue Value="AppStyle == 'Material'">
+        <Change appBarTitle.Alignment='CenterLeft' />
+        <Change appBarTitle.Margin='52, 0, 0, 0' />
+      </WhileTrue>
+      <WhileTrue Value="AppStyle == 'Cupertino'">
+        <Change appBarTitle.Alignment='Center' />
+      </WhileTrue>
+      <StackPanel Margin="0, 0, 32, 0">
+        <Each TemplateSource="this" TemplateKey="RightItem" Count="1" />
+      </StackPanel>
+    </Panel>
+    <WhileTrue Value="ReadProperty Extended">
+      <Panel Height="56" Padding="16">
+        <Text Value="{ReadProperty Title}" Font="RobotoMedium" FontSize="24" TextColor="{ReadProperty TextColor}" />
+      </Panel>
+    </WhileTrue>
   </StackPanel>
-  <Text ux:Name="appBarTitle" Value="{Property Title}" FontSize="20" TextColor="{Property TextColor}"
-  />
-  <WhileTrue Value="AppStyle == 'Material'">
-    <Change appBarTitle.Alignment='CenterLeft' />
-    <Change appBarTitle.Margin='52, 0, 0, 0' />
-  </WhileTrue>
-  <WhileTrue Value="AppStyle == 'Cupertino'">
-    <Change appBarTitle.Alignment='Center' />
-  </WhileTrue>
-  <StackPanel Margin="0, 0, 32, 0">
-    <Each TemplateSource="this" TemplateKey="RightItem" Count="1" />
-  </StackPanel>
-  </Panel>
-</StackPanel>
+</DockPanel>

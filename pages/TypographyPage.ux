@@ -1,20 +1,36 @@
 <Page ux:Class="TypographyPage">
-  <ScrollView>
-    <StackPanel>
-      <FN.List>
-        <FN.ListItem>
-          <FN.Headline Value="Headline" />
-        </FN.ListItem>
-        <FN.ListItem>
-          <FN.Title Value="Title" />
-        </FN.ListItem>
-        <FN.ListItem>
-          <FN.Subheader Value="Subheader" />
-        </FN.ListItem>
-        <FN.ListItem>
-          <FN.TextBody Value="Body" />
-        </FN.ListItem>
-      </FN.List>
-    </StackPanel>
-  </ScrollView>
+  <JavaScript>
+    function goBack () {
+      router.goBack()
+    }
+    module.exports = {
+      goBack: goBack
+    }
+  </JavaScript>
+  <Router ux:Dependency="router" />
+  <DockPanel>
+    <FN.AppBar Title="Typography" Dock="Top" BarColor="#e74c3c" TextColor="White">
+      <FN.AppBarItem ux:Template="LeftItem">
+        <FN.Icon Color="White" Clicked="{goBack}" Visibility="Visible">&#xE317;</FN.Icon>
+      </FN.AppBarItem>
+    </FN.AppBar>
+    <ScrollView>
+      <StackPanel>
+        <FN.List>
+          <FN.ListItem>
+            <FN.Headline Value="Headline" />
+          </FN.ListItem>
+          <FN.ListItem>
+            <FN.Title Value="Title" />
+          </FN.ListItem>
+          <FN.ListItem>
+            <FN.Subheader Value="Subheader" />
+          </FN.ListItem>
+          <FN.ListItem>
+            <FN.TextBody Value="Body" />
+          </FN.ListItem>
+        </FN.List>
+      </StackPanel>
+    </ScrollView>
+  </DockPanel>
 </Page>

@@ -1,0 +1,33 @@
+<Page ux:Class="HomePage">
+  <JavaScript>
+    var Observable = require('FuseJS/Observable');
+    var componentList = Observable(
+      { label: 'Typography', route: 'typography'},
+      { label: 'App Bar', route: 'appbar'},
+      { label: 'List', route: 'list'}
+    )
+    function goToPage (args) {
+      router.push(args.data.route)
+    }
+    module.exports = {
+      componentList: componentList,
+      goToPage: goToPage
+    }
+  </JavaScript>
+  <Router ux:Dependency="router" />
+  <DockPanel>
+	  <FN.AppBar Title="Home" Dock="Top" BarColor="#e74c3c" TextColor="White">
+		</FN.AppBar>
+    <ScrollView>
+      <StackPanel>
+        <FN.List Title="Components">
+          <Each Items="{componentList}">
+            <FN.ListItem Clicked="{goToPage}">
+              <FN.ItemLabel>{label}</FN.ItemLabel>
+            </FN.ListItem>
+          </Each>
+        </FN.List>
+      </StackPanel>
+    </ScrollView>
+  </DockPanel>
+</Page>

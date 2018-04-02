@@ -1,5 +1,19 @@
 <Page ux:Class="ListPage">
+  <JavaScript>
+    function goBack () {
+      router.goBack()
+    }
+    module.exports = {
+      goBack: goBack
+    }
+  </JavaScript>
+  <Router ux:Dependency="router" />
   <DockPanel>
+    <FN.AppBar Title="Typography" Dock="Top" BarColor="#e74c3c" TextColor="White">
+      <FN.AppBarItem ux:Template="LeftItem">
+        <FN.Icon Color="White" Clicked="{goBack}" Visibility="Visible">&#xE317;</FN.Icon>
+      </FN.AppBarItem>
+    </FN.AppBar>
     <ScrollView>
       <StackPanel>
         <FN.List Title="Single Line Item">

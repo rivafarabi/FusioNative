@@ -14,34 +14,12 @@
 	<Font File="assets/icons/MaterialIcons-Regular.ttf" ux:Global="MaterialIcons" />
 	<string ux:Global="AppTheme" ux:Value="Light" />
 	<string ux:Global="AppStyle" ux:Value="Material" />
+	<string ux:Global="OnRoot" ux:Value="True" />
 	<Router ux:Name="router" />
-
-	<DockPanel>
-		<FN.AppBar ux:Name="appBar" Title="Typography" Dock="Top" BarColor="#e74c3c" TextColor="White">
-			<FN.AppBarItem ux:Template="LeftItem">
-				<FN.Icon Color="White">&#xE5D2;</FN.Icon>
-			</FN.AppBarItem>
-		</FN.AppBar>
-		<ClientPanel>
-			<Navigator DefaultPath="typography">
-				<TypographyPage ux:Template="typography">
-					<WhilePageActive>
-						<Set appBar.Title="Typography" />
-					</WhilePageActive>
-				</TypographyPage>
-				<ListPage ux:Template="list">
-					<WhilePageActive>
-						<Set appBar.Title="List" />
-					</WhilePageActive>
-				</ListPage>
-			</Navigator>
-		</ClientPanel>
-		<StackPanel Orientation="Horizontal" ContentAlignment="Center" Padding="16" Background="#e0e0e0" Dock="Bottom" Height="48">
-			<FN.TextCaption>Android</FN.TextCaption>
-			<NativeViewHost>
-				<Switch />
-			</NativeViewHost>
-			<FN.TextCaption>iOS</FN.TextCaption>
-		</StackPanel>
-	</DockPanel>
+		<Navigator DefaultPath="home" ux:Name="nav">
+      <HomePage ux:Template="home" router="router" />
+			<TypographyPage ux:Template="typography" router="router" />
+			<AppBarPage ux:Template="appbar" router="router" />
+			<ListPage ux:Template="list" router="router" />
+		</Navigator>
 </App>
