@@ -3,6 +3,8 @@ build/Local/Designer/cache/ux13/FN.Icon.g.uno
 build/Local/Designer/cache/ux13/FN.Text.g.uno
 build/Local/Designer/cache/ux13/FN.AppBar.g.uno
 build/Local/Designer/cache/ux13/FN.AppBarItem.g.uno
+build/Local/Designer/cache/ux13/FN.CardModal.g.uno
+build/Local/Designer/cache/ux13/FN.CardModalTitle.g.uno
 build/Local/Designer/cache/ux13/FN.ItemCaption.g.uno
 build/Local/Designer/cache/ux13/FN.ItemImage.g.uno
 build/Local/Designer/cache/ux13/FN.ItemLabel.g.uno
@@ -15,7 +17,9 @@ build/Local/Designer/cache/ux13/FN.TextCaption.g.uno
 build/Local/Designer/cache/ux13/FN.TextMenu.g.uno
 build/Local/Designer/cache/ux13/FN.Title.g.uno
 build/Local/Designer/cache/ux13/AppBarPage.g.uno
+build/Local/Designer/cache/ux13/CardPage.g.uno
 build/Local/Designer/cache/ux13/HomePage.g.uno
+build/Local/Designer/cache/ux13/LargeTitlePage.g.uno
 build/Local/Designer/cache/ux13/ListPage.g.uno
 build/Local/Designer/cache/ux13/TypographyPage.g.uno
 build/Local/Designer/cache/ux13/FusioNative.unoproj.g.uno

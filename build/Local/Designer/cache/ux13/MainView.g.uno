@@ -85,6 +85,48 @@ public partial class MainView: Fuse.App
         }
         static global::Uno.UX.Selector __selector0 = "list";
     }
+    [Uno.Compiler.UxGenerated]
+    public partial class Template4: Uno.UX.Template
+    {
+        [Uno.WeakReference] internal readonly MainView __parent;
+        [Uno.WeakReference] internal readonly MainView __parentInstance;
+        public Template4(MainView parent, MainView parentInstance): base("largetitle", false)
+        {
+            __parent = parent;
+            __parentInstance = parentInstance;
+        }
+        static Template4()
+        {
+        }
+        public override object New()
+        {
+            var __self = new global::LargeTitlePage(__parent.router);
+            __self.Name = __selector0;
+            return __self;
+        }
+        static global::Uno.UX.Selector __selector0 = "largetitle";
+    }
+    [Uno.Compiler.UxGenerated]
+    public partial class Template5: Uno.UX.Template
+    {
+        [Uno.WeakReference] internal readonly MainView __parent;
+        [Uno.WeakReference] internal readonly MainView __parentInstance;
+        public Template5(MainView parent, MainView parentInstance): base("card", false)
+        {
+            __parent = parent;
+            __parentInstance = parentInstance;
+        }
+        static Template5()
+        {
+        }
+        public override object New()
+        {
+            var __self = new global::CardPage(__parent.router);
+            __self.Name = __selector0;
+            return __self;
+        }
+        static global::Uno.UX.Selector __selector0 = "card";
+    }
     [global::Uno.UX.UXGlobalResource("RobotoBlack")] public static readonly Fuse.Font RobotoBlack;
     [global::Uno.UX.UXGlobalResource("RobotoBlackItalic")] public static readonly Fuse.Font RobotoBlackItalic;
     [global::Uno.UX.UXGlobalResource("RobotoBold")] public static readonly Fuse.Font RobotoBold;
@@ -109,27 +151,10 @@ public partial class MainView: Fuse.App
     [global::Uno.UX.UXGlobalResource("SanFranciscoTextRegular")] public static readonly Fuse.Font SanFranciscoTextRegular;
     [global::Uno.UX.UXGlobalResource("MaterialIcons")] public static readonly Fuse.Font MaterialIcons;
     [global::Uno.UX.UXGlobalResource("AppTheme")] public static readonly Uno.String AppTheme;
-    [global::Uno.UX.UXGlobalResource("AppStyle")] public static readonly Uno.String AppStyle;
+    [global::Uno.UX.UXGlobalResource("AppPlatform")] public static readonly Uno.String AppPlatform;
     [global::Uno.UX.UXGlobalResource("OnRoot")] public static readonly Uno.String OnRoot;
     internal global::Fuse.Navigation.Router router;
     internal global::Fuse.Controls.Navigator nav;
-    internal global::Fuse.Reactive.FuseJS.DiagnosticsImplModule FuseReactiveFuseJSDiagnosticsImplModule;
-    internal global::Fuse.Reactive.FuseJS.Http FuseReactiveFuseJSHttp;
-    internal global::Fuse.Reactive.FuseJS.TimerModule FuseReactiveFuseJSTimerModule;
-    internal global::Fuse.Drawing.BrushConverter FuseDrawingBrushConverter;
-    internal global::Fuse.Triggers.BusyTaskModule FuseTriggersBusyTaskModule;
-    internal global::Fuse.Testing.UnoTestingHelper FuseTestingUnoTestingHelper;
-    internal global::Fuse.FileSystem.FileSystemModule FuseFileSystemFileSystemModule;
-    internal global::Fuse.Storage.StorageModule FuseStorageStorageModule;
-    internal global::Fuse.WebSocket.WebSocketClientModule FuseWebSocketWebSocketClientModule;
-    internal global::Polyfills.Window.WindowModule PolyfillsWindowWindowModule;
-    internal global::FuseJS.Globals FuseJSGlobals;
-    internal global::FuseJS.Lifecycle FuseJSLifecycle;
-    internal global::FuseJS.Environment FuseJSEnvironment;
-    internal global::FuseJS.Base64 FuseJSBase64;
-    internal global::FuseJS.Bundle FuseJSBundle;
-    internal global::FuseJS.FileReaderImpl FuseJSFileReaderImpl;
-    internal global::FuseJS.UserEvents FuseJSUserEvents;
     static MainView()
     {
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.Animations.Easing.Linear, "Linear");
@@ -263,7 +288,7 @@ public partial class MainView: Fuse.App
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoTextRegular, "SanFranciscoTextRegular");
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.MaterialIcons, "MaterialIcons");
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.AppTheme, "AppTheme");
-        global::Uno.UX.Resource.SetGlobalKey(global::MainView.AppStyle, "AppStyle");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainView.AppPlatform, "AppPlatform");
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.OnRoot, "OnRoot");
         RobotoBlack = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/Roboto-Black.ttf")));
         RobotoBlackItalic = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/Roboto-BlackItalic.ttf")));
@@ -289,7 +314,7 @@ public partial class MainView: Fuse.App
         SanFranciscoTextRegular = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoText-Regular.otf")));
         MaterialIcons = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/icons/MaterialIcons-Regular.ttf")));
         AppTheme = "Light";
-        AppStyle = "Cupertino";
+        AppPlatform = "iOS";
         OnRoot = "True";
         global::Uno.UX.Resource.SetGlobalKey(RobotoBlack, "RobotoBlack");
         global::Uno.UX.Resource.SetGlobalKey(RobotoBlackItalic, "RobotoBlackItalic");
@@ -315,7 +340,7 @@ public partial class MainView: Fuse.App
         global::Uno.UX.Resource.SetGlobalKey(SanFranciscoTextRegular, "SanFranciscoTextRegular");
         global::Uno.UX.Resource.SetGlobalKey(MaterialIcons, "MaterialIcons");
         global::Uno.UX.Resource.SetGlobalKey(AppTheme, "AppTheme");
-        global::Uno.UX.Resource.SetGlobalKey(AppStyle, "AppStyle");
+        global::Uno.UX.Resource.SetGlobalKey(AppPlatform, "AppPlatform");
         global::Uno.UX.Resource.SetGlobalKey(OnRoot, "OnRoot");
     }
     [global::Uno.UX.UXConstructor]
@@ -325,29 +350,31 @@ public partial class MainView: Fuse.App
     }
     void InitializeUX()
     {
-        FuseReactiveFuseJSDiagnosticsImplModule = new global::Fuse.Reactive.FuseJS.DiagnosticsImplModule();
-        FuseReactiveFuseJSHttp = new global::Fuse.Reactive.FuseJS.Http();
-        FuseReactiveFuseJSTimerModule = new global::Fuse.Reactive.FuseJS.TimerModule();
-        FuseDrawingBrushConverter = new global::Fuse.Drawing.BrushConverter();
-        FuseTriggersBusyTaskModule = new global::Fuse.Triggers.BusyTaskModule();
-        FuseTestingUnoTestingHelper = new global::Fuse.Testing.UnoTestingHelper();
-        FuseFileSystemFileSystemModule = new global::Fuse.FileSystem.FileSystemModule();
-        FuseStorageStorageModule = new global::Fuse.Storage.StorageModule();
-        FuseWebSocketWebSocketClientModule = new global::Fuse.WebSocket.WebSocketClientModule();
-        PolyfillsWindowWindowModule = new global::Polyfills.Window.WindowModule();
-        FuseJSGlobals = new global::FuseJS.Globals();
-        FuseJSLifecycle = new global::FuseJS.Lifecycle();
-        FuseJSEnvironment = new global::FuseJS.Environment();
-        FuseJSBase64 = new global::FuseJS.Base64();
-        FuseJSBundle = new global::FuseJS.Bundle();
-        FuseJSFileReaderImpl = new global::FuseJS.FileReaderImpl();
-        FuseJSUserEvents = new global::FuseJS.UserEvents();
+        var temp = new global::Fuse.Reactive.FuseJS.DiagnosticsImplModule();
+        var temp1 = new global::Fuse.Reactive.FuseJS.Http();
+        var temp2 = new global::Fuse.Reactive.FuseJS.TimerModule();
+        var temp3 = new global::Fuse.Drawing.BrushConverter();
+        var temp4 = new global::Fuse.Triggers.BusyTaskModule();
+        var temp5 = new global::Fuse.Testing.UnoTestingHelper();
+        var temp6 = new global::Fuse.FileSystem.FileSystemModule();
+        var temp7 = new global::Fuse.Storage.StorageModule();
+        var temp8 = new global::Fuse.WebSocket.WebSocketClientModule();
+        var temp9 = new global::Polyfills.Window.WindowModule();
+        var temp10 = new global::FuseJS.Globals();
+        var temp11 = new global::FuseJS.Lifecycle();
+        var temp12 = new global::FuseJS.Environment();
+        var temp13 = new global::FuseJS.Base64();
+        var temp14 = new global::FuseJS.Bundle();
+        var temp15 = new global::FuseJS.FileReaderImpl();
+        var temp16 = new global::FuseJS.UserEvents();
         router = new global::Fuse.Navigation.Router();
         nav = new global::Fuse.Controls.Navigator();
         var home = new Template(this, this);
         var typography = new Template1(this, this);
         var appbar = new Template2(this, this);
         var list = new Template3(this, this);
+        var largetitle = new Template4(this, this);
+        var card = new Template5(this, this);
         router.Name = __selector0;
         nav.DefaultPath = "home";
         nav.Name = __selector1;
@@ -355,6 +382,8 @@ public partial class MainView: Fuse.App
         nav.Templates.Add(typography);
         nav.Templates.Add(appbar);
         nav.Templates.Add(list);
+        nav.Templates.Add(largetitle);
+        nav.Templates.Add(card);
         this.Children.Add(router);
         this.Children.Add(nav);
     }

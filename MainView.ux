@@ -14,6 +14,8 @@
 
   <Font File="assets/fonts/SanFranciscoDisplay-Black.otf" ux:Global="SanFranciscoDisplayBlack" />
 	<Font File="assets/fonts/SanFranciscoDisplay-Bold.otf" ux:Global="SanFranciscoDisplayBold" />
+	<Font File="assets/fonts/SanFranciscoDisplay-Regular.otf" ux:Global="SanFranciscoDisplayRegular" />
+	<Font File="assets/fonts/SanFranciscoDisplay-Medium.otf" ux:Global="SanFranciscoDisplayMedium" />
 	<Font File="assets/fonts/SanFranciscoDisplay-Thin.otf" ux:Global="SanFranciscoDisplayThin" />
 	<Font File="assets/fonts/SanFranciscoText-Bold.otf" ux:Global="SanFranciscoTextBold" />
 	<Font File="assets/fonts/SanFranciscoText-BoldItalic.otf" ux:Global="SanFranciscoTextBoldItalic" />

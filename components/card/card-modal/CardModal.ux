@@ -1,27 +1,41 @@
 <Panel ux:Class="FN.CardModal" Margin="16" >
   <Page ux:Dependency="PageContainer" />
-  <bool ux:Key="IsViewed" ux:Value="False"/>
   <FileSource ux:Property="BackgroundImage" />
-  <Rectangle Color="#ecf0f1" CornerRadius="18" MinWidth="100" MinHeight="100" Layer="Background">
-    <Shadow Size="14" Color="Gray" />
+  
+  <JavaScript>
+    var Observable = require('FuseJS/Observable');
+    var isOpened = Observable(false);
+
+    function toggleShow () { 
+      isOpened.value = !isOpened.value; 
+    }
+    module.exports = { 
+      isOpened: isOpened,
+      toggleShow: toggleShow
+    }
+  </JavaScript>
+  
+  <Rectangle Color="White" CornerRadius="18" MinWidth="100" MinHeight="100" MaxHeight="300" Layer="Background">
+    <Shadow Size="24" Color="#cdcdcd" />
     <ImageFill File="{Property BackgroundImage}" StretchMode="UniformToFill"/>
-            
     <Each TemplateSource="this" TemplateKey="Background" Count="1" />
   </Rectangle>
   <DockPanel>
     <Panel Dock="Top">
       <Each TemplateSource="this" TemplateKey="Header" Count="1" />
     </Panel>
-    <Panel Dock="Bottom">
+    <Panel Dock="Bottom" Background="Gray">
       <Each TemplateSource="this" TemplateKey="Footer" Count="1" />
     </Panel>
   </DockPanel>
   <Clicked>
-  <bool ux:Key="IsViewed" ux:Value="True"/>
+    <Callback Handler="{toggleShow}" />
   </Clicked>
-  <WhileTrue Value="{Resource IsViewed}">
-    <Move Target="this" RelativeTo="PositionOffset" RelativeNode="PageContainer" Vector="1" Duration="0.6"/>
-    <Resize Target="this" RelativeTo="Size" RelativeNode="PageContainer" Vector="1" Duration="0.6"/>
-    <Change this.LayoutMaster="PageContainer" Delay=".6"/>
+  <WhileTrue Value="{isOpened}">
+    <Move Target="this" RelativeTo="PositionOffset" RelativeNode="PageContainer" Vector="1" Duration="0.6" Easing="CubicInOut"/>
+    <Resize Target="this" RelativeTo="Size" RelativeNode="PageContainer" Vector="1" Duration="0.6" Easing="CubicInOut"/>
+    <Change this.LayoutMaster="PageContainer" Delay="0.6"/>
+    <Change this.Layer="Overlay"/>
+    <BringToFront Target="this" TargetNode="PageContainer" />
   </WhileTrue>
 </Panel>
