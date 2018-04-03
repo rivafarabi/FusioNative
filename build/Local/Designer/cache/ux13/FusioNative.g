@@ -14,6 +14,7 @@ build/Local/Designer/cache/ux13/FN.TextBody.g.uno
 build/Local/Designer/cache/ux13/FN.TextCaption.g.uno
 build/Local/Designer/cache/ux13/FN.TextMenu.g.uno
 build/Local/Designer/cache/ux13/FN.Title.g.uno
+build/Local/Designer/cache/ux13/AppBarPage.g.uno
 build/Local/Designer/cache/ux13/HomePage.g.uno
 build/Local/Designer/cache/ux13/ListPage.g.uno
 build/Local/Designer/cache/ux13/TypographyPage.g.uno

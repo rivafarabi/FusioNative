@@ -1,0 +1,43 @@
+<Page ux:Class="CardPage">
+  <JavaScript>
+    function goBack () {
+      router.goBack()
+    }
+    module.exports = {
+      goBack: goBack
+    }
+  </JavaScript>
+  <Router ux:Dependency="router" />
+  <int ux:Key="scrollPosition" ux:Value="0" />
+  <DockPanel>
+    <FN.AppBar ux:Name="appBar" Title="Cards" Dock="Top" BarColor="#F8F8F8" TextColor="Black" Extended="True">
+      <FN.AppBarItem ux:Template="LeftItem">
+        <FN.Icon Color="Black" Clicked="{goBack}" Visibility="Visible">&#xE317;</FN.Icon>
+      </FN.AppBarItem>
+    </FN.AppBar>
+    <ScrollView ux:Name="scrollView">
+      <StackPanel>
+        <Grid ColumnCount="2">
+          <FN.CardModal Height="200" PageContainer="this">
+            <FN.CardModalTitle Title="Card Modal" SubTitle="Card Modal" ux:Template="Header"/>
+          </FN.CardModal>
+          <FN.CardModal Height="200" PageContainer="this" BackgroundImage="../assets/images/01.jpeg">
+            <FN.CardModalTitle Title="With Image" SubTitle="Card Modal" FontColor="White" ux:Template="Header"/>
+          </FN.CardModal>
+        </Grid>
+        <FN.CardModal Height="200" PageContainer="this">
+          <FN.CardModalTitle Title="Macros for your computer" SubTitle="Apps" ux:Template="Header"/>
+          <Grid ColumnCount="2" ux:Template="Footer" Margin="16">
+            <FN.TextMenu> Try Deckboard!</FN.TextMenu>
+            <Panel Alignment="Right">
+            <FN.TextMenu>DOWNLOAD</FN.TextMenu>
+            </Panel>
+          </Grid>
+        </FN.CardModal>
+      </StackPanel>
+      <ScrollingAnimation From="0" To="100">
+        <Change appBar.ScrollContent="1" />
+      </ScrollingAnimation>
+    </ScrollView>
+  </DockPanel>
+</Page>

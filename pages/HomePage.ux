@@ -2,9 +2,15 @@
   <JavaScript>
     var Observable = require('FuseJS/Observable');
     var componentList = Observable(
-      { label: 'Typography', route: 'typography'},
-      { label: 'App Bar', route: 'appbar'},
-      { label: 'List', route: 'list'}
+      { titles: 'Basic Components', components: [
+        { label: 'Typography', route: 'typography'},
+        { label: 'App Bar', route: 'appbar'},
+        { label: 'List', route: 'list'},
+        { label: 'Card', route: 'card'}
+      ]},
+      { titles: 'iOS Components', components: [
+        { label: 'Large Title', route: 'largetitle'}
+      ]}
     )
     function goToPage (args) {
       router.push(args.data.route)
@@ -20,13 +26,15 @@
 		</FN.AppBar>
     <ScrollView>
       <StackPanel>
-        <FN.List Title="Components">
-          <Each Items="{componentList}">
-            <FN.ListItem Clicked="{goToPage}">
-              <FN.ItemLabel>{label}</FN.ItemLabel>
-            </FN.ListItem>
-          </Each>
-        </FN.List>
+        <Each Items="{componentList}">
+          <FN.List Title="{titles}">
+            <Each Items="{components}">
+              <FN.ListItem Clicked="{goToPage}">
+                <FN.ItemLabel>{label}</FN.ItemLabel>
+              </FN.ListItem>
+            </Each>
+          </FN.List>
+        </Each>
       </StackPanel>
     </ScrollView>
   </DockPanel>

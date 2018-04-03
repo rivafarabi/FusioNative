@@ -1,0 +1,27 @@
+<Panel ux:Class="FN.CardModal" Margin="16" >
+  <Page ux:Dependency="PageContainer" />
+  <bool ux:Key="IsViewed" ux:Value="False"/>
+  <FileSource ux:Property="BackgroundImage" />
+  <Rectangle Color="#ecf0f1" CornerRadius="18" MinWidth="100" MinHeight="100" Layer="Background">
+    <Shadow Size="14" Color="Gray" />
+    <ImageFill File="{Property BackgroundImage}" StretchMode="UniformToFill"/>
+            
+    <Each TemplateSource="this" TemplateKey="Background" Count="1" />
+  </Rectangle>
+  <DockPanel>
+    <Panel Dock="Top">
+      <Each TemplateSource="this" TemplateKey="Header" Count="1" />
+    </Panel>
+    <Panel Dock="Bottom">
+      <Each TemplateSource="this" TemplateKey="Footer" Count="1" />
+    </Panel>
+  </DockPanel>
+  <Clicked>
+  <bool ux:Key="IsViewed" ux:Value="True"/>
+  </Clicked>
+  <WhileTrue Value="{Resource IsViewed}">
+    <Move Target="this" RelativeTo="PositionOffset" RelativeNode="PageContainer" Vector="1" Duration="0.6"/>
+    <Resize Target="this" RelativeTo="Size" RelativeNode="PageContainer" Vector="1" Duration="0.6"/>
+    <Change this.LayoutMaster="PageContainer" Delay=".6"/>
+  </WhileTrue>
+</Panel>

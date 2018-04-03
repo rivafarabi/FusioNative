@@ -1,0 +1,7 @@
+<StackPanel ux:Class="FN.CardModalTitle" Padding="16,16" Title="" SubTitle="" FontColor="Black">
+  <string ux:Property="SubTitle" />
+  <string ux:Property="Title" />
+  <float4 ux:Property="FontColor" />
+  <Text Font="SanFranciscoDisplayBold" Value="{toUpper(ReadProperty SubTitle)}" FontSize="14" Color="{ReadProperty FontColor}" Opacity=".6" TextWrapping="Wrap"/>
+  <Text Font="SanFranciscoDisplayBold" Value="{ReadProperty Title}" FontSize="26" Color="{ReadProperty FontColor}" TextWrapping="Wrap"/>
+</StackPanel>

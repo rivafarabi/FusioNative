@@ -1,7 +1,9 @@
-<DockPanel ux:Class="FN.AppBar" Color="{Property BarColor}" Dock="Top" Title="" TextColor="Black" BarColor="White" Extended="False">
+<DockPanel ux:Class="FN.AppBar" Color="{Property BarColor}" Dock="Top" Title="" TextColor="Black" BarColor="White" Extended="False" ScrollContent="0">
   <string ux:Property="Title" />
+  <string ux:Property="Platform" />
   <float4 ux:Property="TextColor" />
   <float4 ux:Property="BarColor" />
+  <float ux:Property="ScrollContent" />
   <bool ux:Property="Extended" />
   <StatusBarBackground Dock="Top" />
   <Fuse.iOS.StatusBarConfig Style="Dark" />
@@ -11,22 +13,36 @@
         <Each TemplateSource="this" TemplateKey="LeftItem" Count="1" />
       </StackPanel>
       <Text ux:Name="appBarTitle" Value="{ReadProperty Title}" Font="RobotoMedium" FontSize="20" TextColor="{ReadProperty TextColor}" />
-      <WhileTrue Value="AppStyle == 'Material'">
+      <WhileTrue Value="AppPlatform == 'Default'">
+        <Android>
+          <Change appBarTitle.Alignment='CenterLeft' />
+          <Change appBarTitle.Margin='52, 0, 0, 0' />
+        </Android>
+        <iOS>
+          <Change appBarTitle.Alignment='Center' />
+          <Change appBarTitle.Font='SanFranciscoTextRegular' />
+          <Change this.Height='44' />
+        </iOS>
+      </WhileTrue>
+      <WhileTrue Value="AppPlatform == 'Android'">
         <Change appBarTitle.Alignment='CenterLeft' />
         <Change appBarTitle.Margin='52, 0, 0, 0' />
       </WhileTrue>
-      <WhileTrue Value="AppStyle == 'Cupertino'">
-        <Change appBarTitle.Alignment='Center' />
-        <Change appBarTitle.Font='SanFranciscoTextRegular' />
-        <Change this.Height='44' />
+      <WhileTrue Value="AppPlatform == 'iOS'">
+          <Change appBarTitle.Alignment='Center' />
+          <Change appBarTitle.Font='SanFranciscoTextRegular' />
+          <Change this.Height='44' />
       </WhileTrue>
       <StackPanel Margin="0, 0, 32, 0">
         <Each TemplateSource="this" TemplateKey="RightItem" Count="1" />
       </StackPanel>
     </Panel>
     <WhileTrue Value="ReadProperty Extended">
-      <Panel Height="56" Padding="16,0">
-        <Text Value="{ReadProperty Title}" Font="SanFranciscoDisplayBold" FontSize="41" TextColor="{ReadProperty TextColor}" />
+      <WhileTrue Value="{(ReadProperty ScrollContent) < 1}">
+        <Change appBarTitle.Opacity="0" Duration=".2" />
+      </WhileTrue>
+      <Panel Height="56 - {56 * ReadProperty ScrollContent}" Padding="16,0">
+        <Text Value="{ReadProperty Title}" Font="SanFranciscoDisplayBold" FontSize="41" TextColor="{ReadProperty TextColor}" ClipToBounds="True" />
       </Panel>
       <Rectangle Height="1" Color="#dddddd" />
     </WhileTrue>

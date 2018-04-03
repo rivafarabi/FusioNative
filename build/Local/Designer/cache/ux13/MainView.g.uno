@@ -6,7 +6,7 @@ public partial class MainView: Fuse.App
     {
         [Uno.WeakReference] internal readonly MainView __parent;
         [Uno.WeakReference] internal readonly MainView __parentInstance;
-        public Template(MainView parent, MainView parentInstance): base("LeftItem", false)
+        public Template(MainView parent, MainView parentInstance): base("home", false)
         {
             __parent = parent;
             __parentInstance = parentInstance;
@@ -16,15 +16,11 @@ public partial class MainView: Fuse.App
         }
         public override object New()
         {
-            var __self = new global::FN.AppBarItem();
-            var temp = new global::FN.Icon();
+            var __self = new global::HomePage(__parent.router);
             __self.Name = __selector0;
-            temp.Value = "\uE5D2";
-            temp.Color = Fuse.Drawing.Colors.White;
-            __self.Children.Add(temp);
             return __self;
         }
-        static global::Uno.UX.Selector __selector0 = "LeftItem";
+        static global::Uno.UX.Selector __selector0 = "home";
     }
     [Uno.Compiler.UxGenerated]
     public partial class Template1: Uno.UX.Template
@@ -36,53 +32,58 @@ public partial class MainView: Fuse.App
             __parent = parent;
             __parentInstance = parentInstance;
         }
-        global::Uno.UX.Property<string> appBar_Title_inst;
         static Template1()
         {
         }
         public override object New()
         {
-            var __self = new global::TypographyPage();
-            appBar_Title_inst = new FusioNative_FNAppBar_Title_Property(__parent.appBar, __selector0);
-            var temp = new global::Fuse.Navigation.WhilePageActive();
-            var temp1 = new global::Fuse.Triggers.Actions.Set<string>(appBar_Title_inst);
-            __self.Name = __selector1;
-            temp.Actions.Add(temp1);
-            temp1.Value = "Typography";
-            __self.Children.Add(temp);
+            var __self = new global::TypographyPage(__parent.router);
+            __self.Name = __selector0;
             return __self;
         }
-        static global::Uno.UX.Selector __selector0 = "Title";
-        static global::Uno.UX.Selector __selector1 = "typography";
+        static global::Uno.UX.Selector __selector0 = "typography";
     }
     [Uno.Compiler.UxGenerated]
     public partial class Template2: Uno.UX.Template
     {
         [Uno.WeakReference] internal readonly MainView __parent;
         [Uno.WeakReference] internal readonly MainView __parentInstance;
-        public Template2(MainView parent, MainView parentInstance): base("list", false)
+        public Template2(MainView parent, MainView parentInstance): base("appbar", false)
         {
             __parent = parent;
             __parentInstance = parentInstance;
         }
-        global::Uno.UX.Property<string> appBar_Title_inst;
         static Template2()
         {
         }
         public override object New()
         {
-            var __self = new global::ListPage();
-            appBar_Title_inst = new FusioNative_FNAppBar_Title_Property(__parent.appBar, __selector0);
-            var temp = new global::Fuse.Navigation.WhilePageActive();
-            var temp1 = new global::Fuse.Triggers.Actions.Set<string>(appBar_Title_inst);
-            __self.Name = __selector1;
-            temp.Actions.Add(temp1);
-            temp1.Value = "List";
-            __self.Children.Add(temp);
+            var __self = new global::AppBarPage(__parent.router);
+            __self.Name = __selector0;
             return __self;
         }
-        static global::Uno.UX.Selector __selector0 = "Title";
-        static global::Uno.UX.Selector __selector1 = "list";
+        static global::Uno.UX.Selector __selector0 = "appbar";
+    }
+    [Uno.Compiler.UxGenerated]
+    public partial class Template3: Uno.UX.Template
+    {
+        [Uno.WeakReference] internal readonly MainView __parent;
+        [Uno.WeakReference] internal readonly MainView __parentInstance;
+        public Template3(MainView parent, MainView parentInstance): base("list", false)
+        {
+            __parent = parent;
+            __parentInstance = parentInstance;
+        }
+        static Template3()
+        {
+        }
+        public override object New()
+        {
+            var __self = new global::ListPage(__parent.router);
+            __self.Name = __selector0;
+            return __self;
+        }
+        static global::Uno.UX.Selector __selector0 = "list";
     }
     [global::Uno.UX.UXGlobalResource("RobotoBlack")] public static readonly Fuse.Font RobotoBlack;
     [global::Uno.UX.UXGlobalResource("RobotoBlackItalic")] public static readonly Fuse.Font RobotoBlackItalic;
@@ -96,11 +97,39 @@ public partial class MainView: Fuse.App
     [global::Uno.UX.UXGlobalResource("RobotoRegular")] public static readonly Fuse.Font RobotoRegular;
     [global::Uno.UX.UXGlobalResource("RobotoThin")] public static readonly Fuse.Font RobotoThin;
     [global::Uno.UX.UXGlobalResource("RobotoThinItalic")] public static readonly Fuse.Font RobotoThinItalic;
+    [global::Uno.UX.UXGlobalResource("SanFranciscoDisplayBlack")] public static readonly Fuse.Font SanFranciscoDisplayBlack;
+    [global::Uno.UX.UXGlobalResource("SanFranciscoDisplayBold")] public static readonly Fuse.Font SanFranciscoDisplayBold;
+    [global::Uno.UX.UXGlobalResource("SanFranciscoDisplayThin")] public static readonly Fuse.Font SanFranciscoDisplayThin;
+    [global::Uno.UX.UXGlobalResource("SanFranciscoTextBold")] public static readonly Fuse.Font SanFranciscoTextBold;
+    [global::Uno.UX.UXGlobalResource("SanFranciscoTextBoldItalic")] public static readonly Fuse.Font SanFranciscoTextBoldItalic;
+    [global::Uno.UX.UXGlobalResource("SanFranciscoTextLight")] public static readonly Fuse.Font SanFranciscoTextLight;
+    [global::Uno.UX.UXGlobalResource("SanFranciscoTextLightItalic")] public static readonly Fuse.Font SanFranciscoTextLightItalic;
+    [global::Uno.UX.UXGlobalResource("SanFranciscoTextMedium")] public static readonly Fuse.Font SanFranciscoTextMedium;
+    [global::Uno.UX.UXGlobalResource("SanFranciscoTextMediumItalic")] public static readonly Fuse.Font SanFranciscoTextMediumItalic;
+    [global::Uno.UX.UXGlobalResource("SanFranciscoTextRegular")] public static readonly Fuse.Font SanFranciscoTextRegular;
     [global::Uno.UX.UXGlobalResource("MaterialIcons")] public static readonly Fuse.Font MaterialIcons;
     [global::Uno.UX.UXGlobalResource("AppTheme")] public static readonly Uno.String AppTheme;
     [global::Uno.UX.UXGlobalResource("AppStyle")] public static readonly Uno.String AppStyle;
+    [global::Uno.UX.UXGlobalResource("OnRoot")] public static readonly Uno.String OnRoot;
     internal global::Fuse.Navigation.Router router;
-    internal global::FN.AppBar appBar;
+    internal global::Fuse.Controls.Navigator nav;
+    internal global::Fuse.Reactive.FuseJS.DiagnosticsImplModule FuseReactiveFuseJSDiagnosticsImplModule;
+    internal global::Fuse.Reactive.FuseJS.Http FuseReactiveFuseJSHttp;
+    internal global::Fuse.Reactive.FuseJS.TimerModule FuseReactiveFuseJSTimerModule;
+    internal global::Fuse.Drawing.BrushConverter FuseDrawingBrushConverter;
+    internal global::Fuse.Triggers.BusyTaskModule FuseTriggersBusyTaskModule;
+    internal global::Fuse.Testing.UnoTestingHelper FuseTestingUnoTestingHelper;
+    internal global::Fuse.FileSystem.FileSystemModule FuseFileSystemFileSystemModule;
+    internal global::Fuse.Storage.StorageModule FuseStorageStorageModule;
+    internal global::Fuse.WebSocket.WebSocketClientModule FuseWebSocketWebSocketClientModule;
+    internal global::Polyfills.Window.WindowModule PolyfillsWindowWindowModule;
+    internal global::FuseJS.Globals FuseJSGlobals;
+    internal global::FuseJS.Lifecycle FuseJSLifecycle;
+    internal global::FuseJS.Environment FuseJSEnvironment;
+    internal global::FuseJS.Base64 FuseJSBase64;
+    internal global::FuseJS.Bundle FuseJSBundle;
+    internal global::FuseJS.FileReaderImpl FuseJSFileReaderImpl;
+    internal global::FuseJS.UserEvents FuseJSUserEvents;
     static MainView()
     {
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.Animations.Easing.Linear, "Linear");
@@ -222,9 +251,20 @@ public partial class MainView: Fuse.App
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.RobotoRegular, "RobotoRegular");
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.RobotoThin, "RobotoThin");
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.RobotoThinItalic, "RobotoThinItalic");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoDisplayBlack, "SanFranciscoDisplayBlack");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoDisplayBold, "SanFranciscoDisplayBold");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoDisplayThin, "SanFranciscoDisplayThin");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoTextBold, "SanFranciscoTextBold");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoTextBoldItalic, "SanFranciscoTextBoldItalic");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoTextLight, "SanFranciscoTextLight");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoTextLightItalic, "SanFranciscoTextLightItalic");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoTextMedium, "SanFranciscoTextMedium");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoTextMediumItalic, "SanFranciscoTextMediumItalic");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoTextRegular, "SanFranciscoTextRegular");
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.MaterialIcons, "MaterialIcons");
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.AppTheme, "AppTheme");
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.AppStyle, "AppStyle");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainView.OnRoot, "OnRoot");
         RobotoBlack = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/Roboto-Black.ttf")));
         RobotoBlackItalic = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/Roboto-BlackItalic.ttf")));
         RobotoBold = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/Roboto-Bold.ttf")));
@@ -237,9 +277,20 @@ public partial class MainView: Fuse.App
         RobotoRegular = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/Roboto-Regular.ttf")));
         RobotoThin = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/Roboto-Thin.ttf")));
         RobotoThinItalic = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/Roboto-ThinItalic.ttf")));
+        SanFranciscoDisplayBlack = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoDisplay-Black.otf")));
+        SanFranciscoDisplayBold = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoDisplay-Bold.otf")));
+        SanFranciscoDisplayThin = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoDisplay-Thin.otf")));
+        SanFranciscoTextBold = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoText-Bold.otf")));
+        SanFranciscoTextBoldItalic = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoText-BoldItalic.otf")));
+        SanFranciscoTextLight = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoText-Light.otf")));
+        SanFranciscoTextLightItalic = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoText-LightItalic.otf")));
+        SanFranciscoTextMedium = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoText-Medium.otf")));
+        SanFranciscoTextMediumItalic = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoText-MediumItalic.otf")));
+        SanFranciscoTextRegular = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoText-Regular.otf")));
         MaterialIcons = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/icons/MaterialIcons-Regular.ttf")));
         AppTheme = "Light";
-        AppStyle = "Material";
+        AppStyle = "Cupertino";
+        OnRoot = "True";
         global::Uno.UX.Resource.SetGlobalKey(RobotoBlack, "RobotoBlack");
         global::Uno.UX.Resource.SetGlobalKey(RobotoBlackItalic, "RobotoBlackItalic");
         global::Uno.UX.Resource.SetGlobalKey(RobotoBold, "RobotoBold");
@@ -252,9 +303,20 @@ public partial class MainView: Fuse.App
         global::Uno.UX.Resource.SetGlobalKey(RobotoRegular, "RobotoRegular");
         global::Uno.UX.Resource.SetGlobalKey(RobotoThin, "RobotoThin");
         global::Uno.UX.Resource.SetGlobalKey(RobotoThinItalic, "RobotoThinItalic");
+        global::Uno.UX.Resource.SetGlobalKey(SanFranciscoDisplayBlack, "SanFranciscoDisplayBlack");
+        global::Uno.UX.Resource.SetGlobalKey(SanFranciscoDisplayBold, "SanFranciscoDisplayBold");
+        global::Uno.UX.Resource.SetGlobalKey(SanFranciscoDisplayThin, "SanFranciscoDisplayThin");
+        global::Uno.UX.Resource.SetGlobalKey(SanFranciscoTextBold, "SanFranciscoTextBold");
+        global::Uno.UX.Resource.SetGlobalKey(SanFranciscoTextBoldItalic, "SanFranciscoTextBoldItalic");
+        global::Uno.UX.Resource.SetGlobalKey(SanFranciscoTextLight, "SanFranciscoTextLight");
+        global::Uno.UX.Resource.SetGlobalKey(SanFranciscoTextLightItalic, "SanFranciscoTextLightItalic");
+        global::Uno.UX.Resource.SetGlobalKey(SanFranciscoTextMedium, "SanFranciscoTextMedium");
+        global::Uno.UX.Resource.SetGlobalKey(SanFranciscoTextMediumItalic, "SanFranciscoTextMediumItalic");
+        global::Uno.UX.Resource.SetGlobalKey(SanFranciscoTextRegular, "SanFranciscoTextRegular");
         global::Uno.UX.Resource.SetGlobalKey(MaterialIcons, "MaterialIcons");
         global::Uno.UX.Resource.SetGlobalKey(AppTheme, "AppTheme");
         global::Uno.UX.Resource.SetGlobalKey(AppStyle, "AppStyle");
+        global::Uno.UX.Resource.SetGlobalKey(OnRoot, "OnRoot");
     }
     [global::Uno.UX.UXConstructor]
     public MainView()
@@ -263,66 +325,39 @@ public partial class MainView: Fuse.App
     }
     void InitializeUX()
     {
-        var temp = new global::Fuse.Reactive.FuseJS.DiagnosticsImplModule();
-        var temp1 = new global::Fuse.Reactive.FuseJS.Http();
-        var temp2 = new global::Fuse.Reactive.FuseJS.TimerModule();
-        var temp3 = new global::Fuse.Drawing.BrushConverter();
-        var temp4 = new global::Fuse.Triggers.BusyTaskModule();
-        var temp5 = new global::Fuse.Testing.UnoTestingHelper();
-        var temp6 = new global::Fuse.FileSystem.FileSystemModule();
-        var temp7 = new global::Fuse.Storage.StorageModule();
-        var temp8 = new global::Fuse.WebSocket.WebSocketClientModule();
-        var temp9 = new global::Polyfills.Window.WindowModule();
-        var temp10 = new global::FuseJS.Globals();
-        var temp11 = new global::FuseJS.Lifecycle();
-        var temp12 = new global::FuseJS.Environment();
-        var temp13 = new global::FuseJS.Base64();
-        var temp14 = new global::FuseJS.Bundle();
-        var temp15 = new global::FuseJS.FileReaderImpl();
-        var temp16 = new global::FuseJS.UserEvents();
+        FuseReactiveFuseJSDiagnosticsImplModule = new global::Fuse.Reactive.FuseJS.DiagnosticsImplModule();
+        FuseReactiveFuseJSHttp = new global::Fuse.Reactive.FuseJS.Http();
+        FuseReactiveFuseJSTimerModule = new global::Fuse.Reactive.FuseJS.TimerModule();
+        FuseDrawingBrushConverter = new global::Fuse.Drawing.BrushConverter();
+        FuseTriggersBusyTaskModule = new global::Fuse.Triggers.BusyTaskModule();
+        FuseTestingUnoTestingHelper = new global::Fuse.Testing.UnoTestingHelper();
+        FuseFileSystemFileSystemModule = new global::Fuse.FileSystem.FileSystemModule();
+        FuseStorageStorageModule = new global::Fuse.Storage.StorageModule();
+        FuseWebSocketWebSocketClientModule = new global::Fuse.WebSocket.WebSocketClientModule();
+        PolyfillsWindowWindowModule = new global::Polyfills.Window.WindowModule();
+        FuseJSGlobals = new global::FuseJS.Globals();
+        FuseJSLifecycle = new global::FuseJS.Lifecycle();
+        FuseJSEnvironment = new global::FuseJS.Environment();
+        FuseJSBase64 = new global::FuseJS.Base64();
+        FuseJSBundle = new global::FuseJS.Bundle();
+        FuseJSFileReaderImpl = new global::FuseJS.FileReaderImpl();
+        FuseJSUserEvents = new global::FuseJS.UserEvents();
         router = new global::Fuse.Navigation.Router();
-        var temp17 = new global::Fuse.Controls.DockPanel();
-        appBar = new global::FN.AppBar();
-        var LeftItem = new Template(this, this);
-        var temp18 = new global::Fuse.Controls.ClientPanel();
-        var temp19 = new global::Fuse.Controls.Navigator();
+        nav = new global::Fuse.Controls.Navigator();
+        var home = new Template(this, this);
         var typography = new Template1(this, this);
-        var list = new Template2(this, this);
-        var temp20 = new global::Fuse.Controls.StackPanel();
-        var temp21 = new global::FN.TextCaption();
-        var temp22 = new global::Fuse.Controls.NativeViewHost();
-        var temp23 = new global::Fuse.Controls.Switch();
-        var temp24 = new global::FN.TextCaption();
-        var temp25 = new global::Fuse.Drawing.StaticSolidColor(float4(0.8784314f, 0.8784314f, 0.8784314f, 1f));
+        var appbar = new Template2(this, this);
+        var list = new Template3(this, this);
         router.Name = __selector0;
-        temp17.Children.Add(appBar);
-        temp17.Children.Add(temp18);
-        temp17.Children.Add(temp20);
-        appBar.Name = __selector1;
-        global::Fuse.Controls.DockPanel.SetDock(appBar, Fuse.Layouts.Dock.Top);
-        appBar.Title = "Typography";
-        appBar.TextColor = Fuse.Drawing.Colors.White;
-        appBar.BarColor = float4(0.9058824f, 0.2980392f, 0.2352941f, 1f);
-        appBar.Templates.Add(LeftItem);
-        temp18.Children.Add(temp19);
-        temp19.DefaultPath = "typography";
-        temp19.Templates.Add(typography);
-        temp19.Templates.Add(list);
-        temp20.Orientation = Fuse.Layouts.Orientation.Horizontal;
-        temp20.ContentAlignment = Fuse.Elements.Alignment.Center;
-        temp20.Height = new Uno.UX.Size(48f, Uno.UX.Unit.Unspecified);
-        temp20.Padding = float4(16f, 16f, 16f, 16f);
-        global::Fuse.Controls.DockPanel.SetDock(temp20, Fuse.Layouts.Dock.Bottom);
-        temp20.Background = temp25;
-        temp20.Children.Add(temp21);
-        temp20.Children.Add(temp22);
-        temp20.Children.Add(temp24);
-        temp21.Value = "Android";
-        temp22.Children.Add(temp23);
-        temp24.Value = "iOS";
+        nav.DefaultPath = "home";
+        nav.Name = __selector1;
+        nav.Templates.Add(home);
+        nav.Templates.Add(typography);
+        nav.Templates.Add(appbar);
+        nav.Templates.Add(list);
         this.Children.Add(router);
-        this.Children.Add(temp17);
+        this.Children.Add(nav);
     }
     static global::Uno.UX.Selector __selector0 = "router";
-    static global::Uno.UX.Selector __selector1 = "appBar";
+    static global::Uno.UX.Selector __selector1 = "nav";
 }
