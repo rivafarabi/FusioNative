@@ -141,6 +141,8 @@ public partial class MainView: Fuse.App
     [global::Uno.UX.UXGlobalResource("RobotoThinItalic")] public static readonly Fuse.Font RobotoThinItalic;
     [global::Uno.UX.UXGlobalResource("SanFranciscoDisplayBlack")] public static readonly Fuse.Font SanFranciscoDisplayBlack;
     [global::Uno.UX.UXGlobalResource("SanFranciscoDisplayBold")] public static readonly Fuse.Font SanFranciscoDisplayBold;
+    [global::Uno.UX.UXGlobalResource("SanFranciscoDisplayRegular")] public static readonly Fuse.Font SanFranciscoDisplayRegular;
+    [global::Uno.UX.UXGlobalResource("SanFranciscoDisplayMedium")] public static readonly Fuse.Font SanFranciscoDisplayMedium;
     [global::Uno.UX.UXGlobalResource("SanFranciscoDisplayThin")] public static readonly Fuse.Font SanFranciscoDisplayThin;
     [global::Uno.UX.UXGlobalResource("SanFranciscoTextBold")] public static readonly Fuse.Font SanFranciscoTextBold;
     [global::Uno.UX.UXGlobalResource("SanFranciscoTextBoldItalic")] public static readonly Fuse.Font SanFranciscoTextBoldItalic;
@@ -155,6 +157,23 @@ public partial class MainView: Fuse.App
     [global::Uno.UX.UXGlobalResource("OnRoot")] public static readonly Uno.String OnRoot;
     internal global::Fuse.Navigation.Router router;
     internal global::Fuse.Controls.Navigator nav;
+    internal global::Fuse.Reactive.FuseJS.DiagnosticsImplModule FuseReactiveFuseJSDiagnosticsImplModule;
+    internal global::Fuse.Reactive.FuseJS.Http FuseReactiveFuseJSHttp;
+    internal global::Fuse.Reactive.FuseJS.TimerModule FuseReactiveFuseJSTimerModule;
+    internal global::Fuse.Drawing.BrushConverter FuseDrawingBrushConverter;
+    internal global::Fuse.Triggers.BusyTaskModule FuseTriggersBusyTaskModule;
+    internal global::Fuse.Testing.UnoTestingHelper FuseTestingUnoTestingHelper;
+    internal global::Fuse.FileSystem.FileSystemModule FuseFileSystemFileSystemModule;
+    internal global::Fuse.Storage.StorageModule FuseStorageStorageModule;
+    internal global::Fuse.WebSocket.WebSocketClientModule FuseWebSocketWebSocketClientModule;
+    internal global::Polyfills.Window.WindowModule PolyfillsWindowWindowModule;
+    internal global::FuseJS.Globals FuseJSGlobals;
+    internal global::FuseJS.Lifecycle FuseJSLifecycle;
+    internal global::FuseJS.Environment FuseJSEnvironment;
+    internal global::FuseJS.Base64 FuseJSBase64;
+    internal global::FuseJS.Bundle FuseJSBundle;
+    internal global::FuseJS.FileReaderImpl FuseJSFileReaderImpl;
+    internal global::FuseJS.UserEvents FuseJSUserEvents;
     static MainView()
     {
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.Animations.Easing.Linear, "Linear");
@@ -278,6 +297,8 @@ public partial class MainView: Fuse.App
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.RobotoThinItalic, "RobotoThinItalic");
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoDisplayBlack, "SanFranciscoDisplayBlack");
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoDisplayBold, "SanFranciscoDisplayBold");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoDisplayRegular, "SanFranciscoDisplayRegular");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoDisplayMedium, "SanFranciscoDisplayMedium");
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoDisplayThin, "SanFranciscoDisplayThin");
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoTextBold, "SanFranciscoTextBold");
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.SanFranciscoTextBoldItalic, "SanFranciscoTextBoldItalic");
@@ -304,6 +325,8 @@ public partial class MainView: Fuse.App
         RobotoThinItalic = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/Roboto-ThinItalic.ttf")));
         SanFranciscoDisplayBlack = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoDisplay-Black.otf")));
         SanFranciscoDisplayBold = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoDisplay-Bold.otf")));
+        SanFranciscoDisplayRegular = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoDisplay-Regular.otf")));
+        SanFranciscoDisplayMedium = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoDisplay-Medium.otf")));
         SanFranciscoDisplayThin = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoDisplay-Thin.otf")));
         SanFranciscoTextBold = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoText-Bold.otf")));
         SanFranciscoTextBoldItalic = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import("../../../../../assets/fonts/SanFranciscoText-BoldItalic.otf")));
@@ -330,6 +353,8 @@ public partial class MainView: Fuse.App
         global::Uno.UX.Resource.SetGlobalKey(RobotoThinItalic, "RobotoThinItalic");
         global::Uno.UX.Resource.SetGlobalKey(SanFranciscoDisplayBlack, "SanFranciscoDisplayBlack");
         global::Uno.UX.Resource.SetGlobalKey(SanFranciscoDisplayBold, "SanFranciscoDisplayBold");
+        global::Uno.UX.Resource.SetGlobalKey(SanFranciscoDisplayRegular, "SanFranciscoDisplayRegular");
+        global::Uno.UX.Resource.SetGlobalKey(SanFranciscoDisplayMedium, "SanFranciscoDisplayMedium");
         global::Uno.UX.Resource.SetGlobalKey(SanFranciscoDisplayThin, "SanFranciscoDisplayThin");
         global::Uno.UX.Resource.SetGlobalKey(SanFranciscoTextBold, "SanFranciscoTextBold");
         global::Uno.UX.Resource.SetGlobalKey(SanFranciscoTextBoldItalic, "SanFranciscoTextBoldItalic");
@@ -350,23 +375,23 @@ public partial class MainView: Fuse.App
     }
     void InitializeUX()
     {
-        var temp = new global::Fuse.Reactive.FuseJS.DiagnosticsImplModule();
-        var temp1 = new global::Fuse.Reactive.FuseJS.Http();
-        var temp2 = new global::Fuse.Reactive.FuseJS.TimerModule();
-        var temp3 = new global::Fuse.Drawing.BrushConverter();
-        var temp4 = new global::Fuse.Triggers.BusyTaskModule();
-        var temp5 = new global::Fuse.Testing.UnoTestingHelper();
-        var temp6 = new global::Fuse.FileSystem.FileSystemModule();
-        var temp7 = new global::Fuse.Storage.StorageModule();
-        var temp8 = new global::Fuse.WebSocket.WebSocketClientModule();
-        var temp9 = new global::Polyfills.Window.WindowModule();
-        var temp10 = new global::FuseJS.Globals();
-        var temp11 = new global::FuseJS.Lifecycle();
-        var temp12 = new global::FuseJS.Environment();
-        var temp13 = new global::FuseJS.Base64();
-        var temp14 = new global::FuseJS.Bundle();
-        var temp15 = new global::FuseJS.FileReaderImpl();
-        var temp16 = new global::FuseJS.UserEvents();
+        FuseReactiveFuseJSDiagnosticsImplModule = new global::Fuse.Reactive.FuseJS.DiagnosticsImplModule();
+        FuseReactiveFuseJSHttp = new global::Fuse.Reactive.FuseJS.Http();
+        FuseReactiveFuseJSTimerModule = new global::Fuse.Reactive.FuseJS.TimerModule();
+        FuseDrawingBrushConverter = new global::Fuse.Drawing.BrushConverter();
+        FuseTriggersBusyTaskModule = new global::Fuse.Triggers.BusyTaskModule();
+        FuseTestingUnoTestingHelper = new global::Fuse.Testing.UnoTestingHelper();
+        FuseFileSystemFileSystemModule = new global::Fuse.FileSystem.FileSystemModule();
+        FuseStorageStorageModule = new global::Fuse.Storage.StorageModule();
+        FuseWebSocketWebSocketClientModule = new global::Fuse.WebSocket.WebSocketClientModule();
+        PolyfillsWindowWindowModule = new global::Polyfills.Window.WindowModule();
+        FuseJSGlobals = new global::FuseJS.Globals();
+        FuseJSLifecycle = new global::FuseJS.Lifecycle();
+        FuseJSEnvironment = new global::FuseJS.Environment();
+        FuseJSBase64 = new global::FuseJS.Base64();
+        FuseJSBundle = new global::FuseJS.Bundle();
+        FuseJSFileReaderImpl = new global::FuseJS.FileReaderImpl();
+        FuseJSUserEvents = new global::FuseJS.UserEvents();
         router = new global::Fuse.Navigation.Router();
         nav = new global::Fuse.Controls.Navigator();
         var home = new Template(this, this);

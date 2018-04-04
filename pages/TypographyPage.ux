@@ -11,7 +11,7 @@
   <DockPanel>
     <FN.AppBar ux:Name="appBar" Title="Typography" Dock="Top" BarColor="#e74c3c" TextColor="White">
       <FN.AppBarItem ux:Template="LeftItem">
-        <FN.Icon Color="White" Clicked="{goBack}" Visibility="Visible">&#xE317;</FN.Icon>
+        <FN.Icon Color="White" Clicked="{goBack}" Visibility="Visible">&#xE5C4;</FN.Icon>
       </FN.AppBarItem>
     </FN.AppBar>
     <ScrollView>

@@ -1,0 +1,17 @@
+<Rectangle ux:Class="FN.Checkbox" Width="20" Height="20" Color="#ffffff00" Disabled="False">
+  <string ux:Property="Value" />
+  <bool ux:Property="Disabled" />
+  <Selectable Value="{ReadProperty Value}"/>
+  <Stroke ux:Name="buttonOutline" Width="2" Color="#A9A9A9" />
+  <Circle ux:Name="innerCircle" Color="#009688" Width="10" Height="10"/>
+  <WhileSelected>
+		<Change buttonOutline.Color="#009688" />
+    <Scale Target="innerCircle" Factor="1" Duration=".2"/>
+	</WhileSelected>
+  <WhileSelected Invert="True">
+		<Scale Target="innerCircle" Factor="0" Duration=".2"/>
+	</WhileSelected>
+  <Clicked>
+		<ToggleSelection />
+	</Clicked>
+</Rectangle>

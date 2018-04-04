@@ -1,0 +1,76 @@
+<Page ux:Class="InputPage">
+  <JavaScript>
+    var Observable = require("FuseJS/Observable");
+
+    var radioValue = Observable();
+    var checkboxValue = Observable();
+    var checkboxValueText = Observable(function() {
+		return checkboxValue.toArray().join(", ");
+	});
+
+
+    function goBack () {
+      router.goBack()
+    }
+    module.exports = {
+      goBack: goBack,
+      radioValue: radioValue,
+      checkboxValue: checkboxValue,
+      checkboxValueText: checkboxValueText
+    }
+  </JavaScript>
+  <Router ux:Dependency="router" />
+  <DockPanel>
+    <FN.AppBar Title="Input" Dock="Top" BarColor="#e74c3c" TextColor="White">
+      <FN.AppBarItem ux:Template="LeftItem">
+        <FN.Icon Color="White" Clicked="{goBack}" Visibility="Visible">&#xE5C4;</FN.Icon>
+      </FN.AppBarItem>
+    </FN.AppBar>
+    <ScrollView>
+      <StackPanel>
+        <FN.List Title="Radio Button">
+          <FN.ListItem>
+            <FN.ItemLabel>Selected Value: {radioValue}</FN.ItemLabel>
+          </FN.ListItem>
+          
+          <Grid Columns="1*, 1*, 1*">
+            <Selection Value="{radioValue}" MaxCount="1" MinCount="1"/>
+            <StackPanel ItemSpacing="8">
+              <FN.Radio Value="Radio 1" />
+              <FN.TextBody Alignment="Center">Radio 1</FN.TextBody>
+            </StackPanel>
+            <StackPanel ItemSpacing="8">
+              <FN.Radio Value="Radio 2" />
+              <FN.TextBody Alignment="Center">Radio 2</FN.TextBody>
+            </StackPanel>
+            <StackPanel ItemSpacing="8">
+              <FN.Radio Value="Radio 3" />
+              <FN.TextBody Alignment="Center">Radio 3</FN.TextBody>
+            </StackPanel>
+          </Grid>
+        </FN.List>
+
+        <FN.List Title="Checkbox">
+          <FN.ListItem>
+            <FN.ItemLabel>Selected Values: {checkboxValueText}</FN.ItemLabel>
+          </FN.ListItem>
+          <Grid Columns="1*, 1*, 1*">
+            <Selection Values="{checkboxValue}"/>
+            <StackPanel ItemSpacing="8">
+              <FN.Checkbox Value="Radio 1" />
+              <FN.TextBody Alignment="Center">Checkbox 1</FN.TextBody>
+            </StackPanel>
+            <StackPanel ItemSpacing="8">
+              <FN.Checkbox Value="Radio 2" />
+              <FN.TextBody Alignment="Center">Checkbox 2</FN.TextBody>
+            </StackPanel>
+            <StackPanel ItemSpacing="8">
+              <FN.Checkbox Value="Radio 3" />
+              <FN.TextBody Alignment="Center">Checkbox 3</FN.TextBody>
+            </StackPanel>
+          </Grid>
+        </FN.List>
+      </StackPanel>
+    </ScrollView>
+  </DockPanel>
+</Page>

@@ -214,12 +214,12 @@ namespace FN
             var temp74 = new global::Fuse.Controls.Rectangle();
             var temp75 = new global::Fuse.Reactive.DataBinding(temp6_Value_inst, temp41, Fuse.Reactive.BindingMode.Default);
             var temp76 = new global::Fuse.Reactive.DataBinding(this_Color_inst, temp43, Fuse.Reactive.BindingMode.Default);
-            global::Fuse.Controls.DockPanel.SetDock(this, Fuse.Layouts.Dock.Top);
             this.Title = "";
             this.TextColor = Fuse.Drawing.Colors.Black;
             this.BarColor = Fuse.Drawing.Colors.White;
             this.ScrollContent = 0f;
             this.Extended = false;
+            global::Fuse.Controls.DockPanel.SetDock(this, Fuse.Layouts.Dock.Top);
             global::Fuse.Controls.DockPanel.SetDock(temp44, Fuse.Layouts.Dock.Top);
             temp45.Style = Fuse.Platform.StatusBarStyle.Dark;
             temp46.Children.Add(temp47);

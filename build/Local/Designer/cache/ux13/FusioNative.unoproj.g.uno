@@ -189,6 +189,14 @@ sealed class FusioNative_FuseElementsElement_ElementLayoutMaster_Property: Uno.U
     public override Fuse.Elements.Element Get(global::Uno.UX.PropertyObject obj) { return global::Fuse.Controls.LayoutControl.GetLayoutMaster((Fuse.Elements.Element)obj); }
     public override void Set(global::Uno.UX.PropertyObject obj, Fuse.Elements.Element v, global::Uno.UX.IPropertyListener origin) { global::Fuse.Controls.LayoutControl.SetLayoutMaster((Fuse.Elements.Element)obj, v); }
 }
+sealed class FusioNative_FuseVisual_Layer_Property: Uno.UX.Property<Fuse.Layer>
+{
+    [Uno.WeakReference] readonly Fuse.Visual _obj;
+    public FusioNative_FuseVisual_Layer_Property(Fuse.Visual obj, global::Uno.UX.Selector name) : base(name) { _obj = obj; }
+    public override global::Uno.UX.PropertyObject Object { get { return _obj; } }
+    public override Fuse.Layer Get(global::Uno.UX.PropertyObject obj) { return ((Fuse.Visual)obj).Layer; }
+    public override void Set(global::Uno.UX.PropertyObject obj, Fuse.Layer v, global::Uno.UX.IPropertyListener origin) { ((Fuse.Visual)obj).Layer = v; }
+}
 sealed class FusioNative_FuseControlsTextControl_Color_Property: Uno.UX.Property<float4>
 {
     [Uno.WeakReference] readonly Fuse.Controls.TextControl _obj;
@@ -222,5 +230,14 @@ sealed class FusioNative_FNList_Title_Property: Uno.UX.Property<string>
     public override global::Uno.UX.PropertyObject Object { get { return _obj; } }
     public override string Get(global::Uno.UX.PropertyObject obj) { return ((FN.List)obj).Title; }
     public override void Set(global::Uno.UX.PropertyObject obj, string v, global::Uno.UX.IPropertyListener origin) { ((FN.List)obj).SetTitle(v, origin); }
+    public override bool SupportsOriginSetter { get { return true; } }
+}
+sealed class FusioNative_FNCardModal_BackgroundImage_Property: Uno.UX.Property<Uno.UX.FileSource>
+{
+    [Uno.WeakReference] readonly FN.CardModal _obj;
+    public FusioNative_FNCardModal_BackgroundImage_Property(FN.CardModal obj, global::Uno.UX.Selector name) : base(name) { _obj = obj; }
+    public override global::Uno.UX.PropertyObject Object { get { return _obj; } }
+    public override Uno.UX.FileSource Get(global::Uno.UX.PropertyObject obj) { return ((FN.CardModal)obj).BackgroundImage; }
+    public override void Set(global::Uno.UX.PropertyObject obj, Uno.UX.FileSource v, global::Uno.UX.IPropertyListener origin) { ((FN.CardModal)obj).SetBackgroundImage(v, origin); }
     public override bool SupportsOriginSetter { get { return true; } }
 }

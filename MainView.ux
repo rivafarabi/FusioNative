@@ -27,12 +27,13 @@
 
 	<Font File="assets/icons/MaterialIcons-Regular.ttf" ux:Global="MaterialIcons" />
 	<string ux:Global="AppTheme" ux:Value="Light" />
-	<string ux:Global="AppPlatform" ux:Value="iOS" />
+	<string ux:Global="AppPlatform" ux:Value="Android" />
 	<string ux:Global="OnRoot" ux:Value="True" />
 	<Router ux:Name="router" />
 		<Navigator DefaultPath="home" ux:Name="nav">
       <HomePage ux:Template="home" router="router" />
 			<TypographyPage ux:Template="typography" router="router" />
+			<InputPage ux:Template="input" router="router" />
 			<AppBarPage ux:Template="appbar" router="router" />
 			<ListPage ux:Template="list" router="router" />
 			<LargeTitlePage ux:Template="largetitle" router="router" />

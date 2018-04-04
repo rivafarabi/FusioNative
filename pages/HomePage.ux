@@ -5,6 +5,7 @@
       { titles: 'Basic Components', components: [
         { label: 'Typography', route: 'typography'},
         { label: 'App Bar', route: 'appbar'},
+        { label: 'Input', route: 'input'},
         { label: 'List', route: 'list'},
         { label: 'Card', route: 'card'}
       ]},

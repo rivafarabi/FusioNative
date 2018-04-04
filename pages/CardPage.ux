@@ -15,7 +15,7 @@
         
           <FN.AppBar ColumnSpan="2" ux:Name="appBar" Title="App Bar" Dock="Top" BarColor="#F8F8F8" TextColor="Black" Extended="True">
             <FN.AppBarItem ux:Template="LeftItem">
-              <FN.Icon Color="Black" Clicked="{goBack}" Visibility="Visible">&#xE317;</FN.Icon>
+              <FN.Icon Color="Black" Clicked="{goBack}" Visibility="Visible">&#xE5C4;</FN.Icon>
             </FN.AppBarItem>
           </FN.AppBar>
           <FN.CardModal Height="200" PageContainer="this">
