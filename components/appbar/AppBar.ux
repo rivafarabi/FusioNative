@@ -1,9 +1,10 @@
-<DockPanel ux:Class="FN.AppBar" Color="{Property BarColor}" Dock="Top" Title="" TextColor="Black" BarColor="White" Extended="False" ScrollContent="0">
+<DockPanel ux:Class="FN.AppBar" Color="{Property BarColor}" Dock="Top" Title="" TextColor="Black" BarColor="White" Extended="False" ScrollContent="0" Elevation="0">
   <string ux:Property="Title" />
   <string ux:Property="Platform" />
   <float4 ux:Property="TextColor" />
   <float4 ux:Property="BarColor" />
   <float ux:Property="ScrollContent" />
+  <float ux:Property="Elevation" />
   <bool ux:Property="Extended" />
   <StatusBarBackground Dock="Top" />
   <Fuse.iOS.StatusBarConfig Style="Dark" />
@@ -44,7 +45,9 @@
       <Panel Height="56 - {56 * ReadProperty ScrollContent}" Padding="16,0">
         <Text Value="{ReadProperty Title}" Font="SanFranciscoDisplayBold" FontSize="41" TextColor="{ReadProperty TextColor}" ClipToBounds="True" />
       </Panel>
-      <Rectangle Height="1" Color="#dddddd" />
+      <Rectangle Height="1" Color="#dddddd">
+        <Shadow Size="{Property Elevation}" Color="#cdcdcd" />
+      </Rectangle>
     </WhileTrue>
   </StackPanel>
 </DockPanel>

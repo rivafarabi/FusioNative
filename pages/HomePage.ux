@@ -7,10 +7,10 @@
         { label: 'App Bar', route: 'appbar'},
         { label: 'Input', route: 'input'},
         { label: 'List', route: 'list'},
-        { label: 'Card', route: 'card'}
       ]},
       { titles: 'iOS Components', components: [
-        { label: 'Large Title', route: 'largetitle'}
+        { label: 'Large Title', route: 'largetitle'},
+        { label: 'App Store Card', route: 'appstorecard'}
       ]}
     )
     function goToPage (args) {
@@ -25,18 +25,16 @@
   <DockPanel>
 	  <FN.AppBar Title="Home" Dock="Top" BarColor="#e74c3c" TextColor="White">
 		</FN.AppBar>
-    <ScrollView>
-      <StackPanel>
-        <Each Items="{componentList}">
-          <FN.List Title="{titles}">
-            <Each Items="{components}">
-              <FN.ListItem Clicked="{goToPage}">
-                <FN.ItemLabel>{label}</FN.ItemLabel>
-              </FN.ListItem>
-            </Each>
-          </FN.List>
-        </Each>
-      </StackPanel>
-    </ScrollView>
+    <FN.Body>
+      <Each Items="{componentList}">
+        <FN.List Title="{titles}">
+          <Each Items="{components}">
+            <FN.ListItem Clicked="{goToPage}">
+              <FN.ItemLabel>{label}</FN.ItemLabel>
+            </FN.ListItem>
+          </Each>
+        </FN.List>
+      </Each>
+    </FN.Body>
   </DockPanel>
 </Page>

@@ -1,0 +1,26 @@
+<Panel ux:Class="FN.Fonts">
+  <Font File="../assets/fonts/Roboto-Black.ttf" ux:Global="RobotoBlack" />
+	<Font File="../assets/fonts/Roboto-BlackItalic.ttf" ux:Global="RobotoBlackItalic" />
+	<Font File="../assets/fonts/Roboto-Bold.ttf" ux:Global="RobotoBold" />
+	<Font File="../assets/fonts/Roboto-BoldItalic.ttf" ux:Global="RobotoBoldItalic" />
+	<Font File="../assets/fonts/Roboto-Italic.ttf" ux:Global="RobotoItalic" />
+	<Font File="../assets/fonts/Roboto-Light.ttf" ux:Global="RobotoLight" />
+	<Font File="../assets/fonts/Roboto-LightItalic.ttf" ux:Global="RobotoLightItalic" />
+	<Font File="../assets/fonts/Roboto-Medium.ttf" ux:Global="RobotoMedium" />
+	<Font File="../assets/fonts/Roboto-MediumItalic.ttf" ux:Global="RobotoMediumItalic" />
+	<Font File="../assets/fonts/Roboto-Regular.ttf" ux:Global="RobotoRegular" />
+	<Font File="../assets/fonts/Roboto-Thin.ttf" ux:Global="RobotoThin" />
+	<Font File="../assets/fonts/Roboto-ThinItalic.ttf" ux:Global="RobotoThinItalic" />
+  <Font File="../assets/fonts/SanFranciscoDisplay-Black.otf" ux:Global="SanFranciscoDisplayBlack" />
+	<Font File="../assets/fonts/SanFranciscoDisplay-Bold.otf" ux:Global="SanFranciscoDisplayBold" />
+	<Font File="../assets/fonts/SanFranciscoDisplay-Regular.otf" ux:Global="SanFranciscoDisplayRegular" />
+	<Font File="../assets/fonts/SanFranciscoDisplay-Medium.otf" ux:Global="SanFranciscoDisplayMedium" />
+	<Font File="../assets/fonts/SanFranciscoDisplay-Thin.otf" ux:Global="SanFranciscoDisplayThin" />
+	<Font File="../assets/fonts/SanFranciscoText-Bold.otf" ux:Global="SanFranciscoTextBold" />
+	<Font File="../assets/fonts/SanFranciscoText-BoldItalic.otf" ux:Global="SanFranciscoTextBoldItalic" />
+	<Font File="../assets/fonts/SanFranciscoText-Light.otf" ux:Global="SanFranciscoTextLight" />
+	<Font File="../assets/fonts/SanFranciscoText-LightItalic.otf" ux:Global="SanFranciscoTextLightItalic" />
+	<Font File="../assets/fonts/SanFranciscoText-Medium.otf" ux:Global="SanFranciscoTextMedium" />
+	<Font File="../assets/fonts/SanFranciscoText-MediumItalic.otf" ux:Global="SanFranciscoTextMediumItalic" />
+	<Font File="../assets/fonts/SanFranciscoText-Regular.otf" ux:Global="SanFranciscoTextRegular" />
+</Panel>

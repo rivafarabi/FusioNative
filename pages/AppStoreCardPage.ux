@@ -1,0 +1,42 @@
+<Page ux:Class="AppStoreCardPage">
+  <JavaScript>
+    function goBack () {
+      router.goBack()
+    }
+    module.exports = {
+      goBack: goBack
+    }
+  </JavaScript>
+  <Router ux:Dependency="router" />
+  <int ux:Key="scrollPosition" ux:Value="0" />
+  <DockPanel>
+    <ScrollView ux:Name="scrollView">
+        <Grid ColumnCount="2">
+        
+          <FN.AppBar ColumnSpan="2" ux:Name="appBar" Title="App Bar" Dock="Top" BarColor="#F8F8F8" TextColor="Black" Extended="True">
+            <FN.AppBarItem ux:Template="LeftItem">
+              <FN.Icon Color="Black" Clicked="{goBack}" Visibility="Visible">&#xE5C4;</FN.Icon>
+            </FN.AppBarItem>
+          </FN.AppBar>
+          <FN.CardModal Height="200" PageContainer="this">
+            <FN.CardModalTitle Title="Let's Get Started" SubTitle="Card Modal" ux:Template="Header"/>
+          </FN.CardModal>
+          <FN.CardModal Height="200" PageContainer="this" BackgroundImage="../assets/images/01.jpeg">
+            <FN.CardModalTitle Title="With Image" SubTitle="Card Modal" FontColor="White" ux:Template="Header"/>
+            <StackPanel ux:Template="Footer" Padding="16">
+              <FN.Title>Lorem Ipsum</FN.Title>
+            </StackPanel>
+          </FN.CardModal>
+          <FN.CardModal Height="200" PageContainer="this" ColumnSpan="2">
+            <FN.CardModalTitle Title="Macros for your computer" SubTitle="Apps" ux:Template="Header"/>
+            <Grid ColumnCount="2" ux:Template="Footer" Margin="16">
+              <FN.TextMenu> Try Deckboard!</FN.TextMenu>
+              <Panel Alignment="Right">
+              <FN.TextMenu>DOWNLOAD</FN.TextMenu>
+              </Panel>
+            </Grid>
+          </FN.CardModal>
+        </Grid>
+    </ScrollView>
+  </DockPanel>
+</Page>

@@ -10,7 +10,7 @@
   <Router ux:Dependency="router" />
   <int ux:Key="scrollPosition" ux:Value="0" />
   <DockPanel>
-    <FN.AppBar ux:Name="appBar" Title="App Bar" Dock="Top" BarColor="#F8F8F8" TextColor="Black" Extended="True">
+    <FN.AppBar ux:Name="appBar" Title="App Bar" Dock="Top" BarColor="#F8F8F8" TextColor="Black" Elevation="1">
       <FN.AppBarItem ux:Template="LeftItem">
         <FN.Icon Color="Black" Clicked="{goBack}" Visibility="Visible">&#xE5C4;</FN.Icon>
       </FN.AppBarItem>

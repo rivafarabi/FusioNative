@@ -4,7 +4,7 @@
     <FN.TextMenu Color="#009689" Margin="16, 16, 0, 0">{Property Title}</FN.TextMenu>
   </WhileFalse>
   <DockPanel  ux:Binding="Children">
-    <StackPanel Orientation="Vertical" ux:Name="itemContent" ItemSpacing="16">
+    <StackPanel Orientation="Vertical" ux:Name="itemContent" ItemSpacing="0">
     </StackPanel>
     <Rectangle Dock="Bottom" Color="#dddddd" Height="1" Margin="0, 16, 0, 0"/>
   </DockPanel>

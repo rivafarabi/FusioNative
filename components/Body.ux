@@ -1,0 +1,6 @@
+<Container ux:Class="FN.Body" Subtree="itemContent">
+  <ScrollView ux:Binding="Children">
+      <StackPanel Orientation="Vertical" ux:Name="itemContent" ItemSpacing="16">
+      </StackPanel>
+  </ScrollView>
+</Container>
