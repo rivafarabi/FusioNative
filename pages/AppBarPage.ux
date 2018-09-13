@@ -17,20 +17,11 @@
     </FN.AppBar>
     <ScrollView ux:Name="scrollView">
       <StackPanel>
-        <FN.List>
-          <FN.ListItem>
-            <FN.Headline Value="Headline" />
-          </FN.ListItem>
-          <FN.ListItem>
-            <FN.Title Value="Title" />
-          </FN.ListItem>
-          <FN.ListItem>
-            <FN.Subheader Value="Subheader" />
-          </FN.ListItem>
-          <FN.ListItem>
-            <FN.TextBody Value="Body" />
-          </FN.ListItem>
-        </FN.List>
+        <FN.AppBar Title="App Bar" Dock="Top" BarColor="#F8F8F8" TextColor="Black" Elevation="1">
+          <FN.AppBarItem ux:Template="LeftItem">
+            <!-- <FN.Icon Color="Black" Clicked="{goBack}" Visibility="Visible">&#xE5C4;</FN.Icon> -->
+          </FN.AppBarItem>
+        </FN.AppBar>
       </StackPanel>
       <ScrollingAnimation From="0" To="100">
         <Change appBar.ScrollContent="1" />

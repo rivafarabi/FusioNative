@@ -29,9 +29,9 @@
       <Each Items="{componentList}">
         <FN.List Title="{titles}">
           <Each Items="{components}">
-            <FN.ListItem Clicked="{goToPage}">
+            <FN.ListItemButton Clicked="{goToPage}">
               <FN.ItemLabel>{label}</FN.ItemLabel>
-            </FN.ListItem>
+            </FN.ListItemButton>
           </Each>
         </FN.List>
       </Each>

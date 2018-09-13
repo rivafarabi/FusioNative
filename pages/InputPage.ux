@@ -5,10 +5,8 @@
     var radioValue = Observable();
     var checkboxValue = Observable();
     var checkboxValueText = Observable(function() {
-		return checkboxValue.toArray().join(", ");
-	});
-
-
+      return checkboxValue.toArray().join(", ");
+    });
     function goBack () {
       router.goBack()
     }
@@ -28,11 +26,24 @@
     </FN.AppBar>
     <ScrollView>
       <StackPanel>
+        <FN.List Title="Raised Button">
+          <Grid Columns="1*, 1*">
+            <FN.Button Text="Raised Button" />
+            <FN.Button Text="Disabled" Disabled="True"/>
+          </Grid>
+        </FN.List>
+
+        <FN.List Title="Flat Button">
+          <Grid Columns="1*, 1*">
+            <FN.FlatButton Text="Flat Button" />
+            <FN.FlatButton Text="Disabled"/>
+          </Grid>
+        </FN.List>
+
         <FN.List Title="Radio Button">
           <FN.ListItem>
             <FN.ItemLabel>Selected Value: {radioValue}</FN.ItemLabel>
           </FN.ListItem>
-          
           <Grid Columns="1*, 1*, 1*">
             <Selection Value="{radioValue}" MaxCount="1" MinCount="1"/>
             <StackPanel ItemSpacing="8">

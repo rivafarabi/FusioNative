@@ -1,5 +1,4 @@
-<Container ux:Class="FN.ListItem" Subtree="itemContent" >
+<Container ux:Class="FN.ListItem" Subtree="itemContent" MinHeight="40">
   <StackPanel ux:Binding="Children" Orientation="Horizontal" ux:Name="itemContent" ClipToBounds="True" Padding="16, 8">
-    <FN.RippleEffect />
   </StackPanel>
 </Container>

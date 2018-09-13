@@ -1,2 +1,2 @@
-<Text ux:Class="FN.TextBody" Font="RobotoRegular" FontSize="14" TextWrapping="Wrap" Color="Black">
+<Text ux:Class="FN.TextBody" Font="RobotoRegular" FontSize="12" TextWrapping="Wrap" Color="Black">
 </Text>

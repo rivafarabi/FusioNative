@@ -1,4 +1,4 @@
-<Panel ux:Class="FN.RippleEffect" Layer="Overlay">
+<Panel ux:Class="FN.RippleEffect" Layer="Background" ClipToBounds="True">
   <JavaScript>
     var Observable = require("FuseJS/Observable")
     var rippleX = Observable(10)
@@ -19,7 +19,10 @@
     <Circle ux:Name="rippleEffect" X="{rippleX}" Y="{rippleY}" Width="5" Height="5" Fill="#0004" Opacity="0" />
     <Pressed>
       <Change rippleEffect.Opacity=".4" Duration="0" DurationBack=".2"/>
-      <Scale Target="rippleEffect" Factor="200" Duration=".2" />
+      <Scale Target="rippleEffect" Factor="100" Duration=".5" />
     </Pressed>
+    <WhilePressed>
+      <Rectangle Color="#0005" Opacity=".5" />
+    </WhilePressed>
   </Panel>
 </Panel>

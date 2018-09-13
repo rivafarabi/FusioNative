@@ -1,2 +1,2 @@
-<Text ux:Class="FN.ItemLabel" Font="RobotoRegular" Alignment="CenterLeft" FontSize="16" TextWrapping="Wrap" Color="Black">
+<Text ux:Class="FN.ItemLabel" Font="RobotoRegular" Alignment="CenterLeft" FontSize="14" TextWrapping="Wrap" Color="Black">
 </Text>

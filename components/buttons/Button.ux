@@ -1,0 +1,21 @@
+<Panel ux:Class="FN.Button" HitTestMode="LocalBoundsAndChildren" Margin="8" ButtonColor="#3498db" Size="Regular" Disabled="False">
+  <string ux:Property="Text" />
+  <string ux:Property="Size" />
+  <bool ux:Property="Disabled" />
+  <string ux:Property="ButtonColor" />
+  <WhileTrue Value="{Size == 'Small'}">
+    <Set this.Height="40" />
+  </WhileTrue>
+  
+  <FN.TextMenu Value="{toUpper(ReadProperty Text)}" Color="#fff" Alignment="Center" Margin="24,8" />
+  <WhileFalse Value="{Property Disabled}">
+    <Rectangle Color="{Property ButtonColor}" CornerRadius="5" Layer="Underlay">
+      <Shadow Size="10" Color="#fff" />
+    </Rectangle>
+    <FN.RippleEffect />
+  </WhileFalse>
+  <WhileTrue Value="{Property Disabled}">
+    <Rectangle Color="Gray" CornerRadius="5" Layer="Underlay">
+    </Rectangle>
+  </WhileTrue>
+</Panel>

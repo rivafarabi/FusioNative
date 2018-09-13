@@ -25,10 +25,10 @@
         </FN.List>
         <FN.List Title="Single Line Item with Avatar">
           <Each Count="3">
-            <FN.ListItem>
+            <FN.ListItemButton>
               <FN.ItemImage />
               <FN.ItemLabel>Single Line Item</FN.ItemLabel>
-            </FN.ListItem>
+            </FN.ListItemButton>
           </Each>
         </FN.List>
         <FN.List Title="Two Line Item">

@@ -1,0 +1,10 @@
+<Panel ux:Class="FN.FlatButton" HitTestMode="LocalBoundsAndChildren" Margin="8" ButtonColor="#3498db" Size="Regular">
+  <string ux:Property="Text" />
+  <string ux:Property="Size" />
+  <string ux:Property="ButtonColor" />
+  <WhileTrue Value="{Size == 'Small'}">
+    <Set this.Height="40" />
+  </WhileTrue>
+  <FN.TextMenu Value="{toUpper(ReadProperty Text)}" Color="{Property ButtonColor}" Alignment="Center" Margin="24,8" />
+  <FN.RippleEffect />
+</Panel>
